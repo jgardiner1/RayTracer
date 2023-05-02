@@ -1,0 +1,24 @@
+EQUATIONS
+
+Sphere centered at origin of Radius R = x^2 + y^2 + z^2 = R^2
+if point(x, y, z) is;
+on the sphere then:      x^2 + y^2 + z^2 = R^2
+inside the sphere:       x^2 + y^2 + z^2 < R^2
+outside the sphere:      x^2 + y^2 + z^2 > R^2
+
+if spheres center is at (Cx, Cy, Cz):   (x − Cx)^2 + (y − Cy)^2 + (z − Cz)^2 = r2
+
+Vector from center C = (Cx, Cy, Cz) to point P(x, y, z) = (P - C)
+this means (P - C) * (P - C) = (x - Cx)^2 + (y - Cy)^2 + (z - Cz)^2
+equation for a sphere in vector form is:    (P - C) * (P - C) = r^2
+this can be read as any point P that satisfies this equation is on the sphere
+we want to know if our ray P(t) = A + tb ever hits the sphere
+if it does, there is some t for which P(t) satisfies the sphere equation
+we're looking for any t where the following is true: (P(t) - C) * (P(t) - C) = r^2
+expanded full form: (A + tb - C) * (A + tb - C) = r^2
+expanded and moved to one side: t^2b * b + 2tb * (A - C) + (A - C) * (A - C) - r^2 = 0
+all the vectors and r is known in this equation
+when we solve for t it leaves either;
+    positive = 2 real solutions (ray intersects sphere twice, one when it enters and one when it exits)
+    negative = no solutions (ray doesnt hit sphere)
+    0        = 1 real solution (ray hits the edge of the sphere)
